@@ -104,3 +104,24 @@ test('object merge', t => {
   t.falsy(mergedSchema({ a: true, c: 42, b: { y: 2, z: 3 } }).ok);
   t.falsy(mergedSchema({ a: true, c: 'yo', b: { y: false, z: 3 } }).ok);
 });
+
+test('errors and warnings', t => {
+  const schema = v.object({
+    a: v.bool,
+    b: v.deprecated(v.string, 'moved to `c`'),
+    files: v.objects({ keys: ['javascripts', 'stylesheets'] }, v.bool)
+  });
+
+  const result = schema({ a: 42, b: 'string', files: { javascript: true } });
+  const fmt = skemata.formatObject(result, 'config');
+
+  t.deepEqual(fmt, {
+    errors: [
+      { path: 'config.a', result: 'expected: boolean, got: number (42)' }
+    ],
+    warnings: [
+      { path: 'config.b', warning: 'deprecated: moved to `c`' },
+      { path: 'config.files.javascript', warning: 'unrecognized key: javascript; expected either of javascripts, stylesheets; perhaps you meant javascripts' }
+    ]
+  });
+});
