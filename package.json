@@ -1,0 +1,28 @@
+{
+  "name": "skemata",
+  "version": "0.1.0",
+  "description": "An object structure and type validation library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brunch/skemata.git"
+  },
+  "keywords": [
+    "object",
+    "schema",
+    "validation",
+    "types"
+  ],
+  "author": "Paul Miller (http://paulmillr.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brunch/skemata/issues"
+  },
+  "homepage": "https://github.com/brunch/skemata#readme",
+  "dependencies": {
+    "fast-levenshtein": "^1.1.3"
+  }
+}
