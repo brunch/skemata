@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import skemata from './index';
+import skemata from './lib/index';
 const v = skemata.v;
 
 test('primitive type validation', t => {

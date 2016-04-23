@@ -2,7 +2,7 @@
   "name": "skemata",
   "version": "0.1.0",
   "description": "An object structure and type validation library",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "ava"
   },
