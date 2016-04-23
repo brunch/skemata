@@ -14,7 +14,8 @@
     "object",
     "schema",
     "validation",
-    "types"
+    "types",
+    "type"
   ],
   "author": "Paul Miller (http://paulmillr.com)",
   "license": "MIT",
